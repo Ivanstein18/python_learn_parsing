@@ -22,4 +22,7 @@ with open("index.html") as file:
 soup = BeautifulSoup(src, "lxml")
 all_products_href = soup.find_all(class_ = "mzr-tc-group-item-href")
 for item in all_products_href:
-    print(item)
+    item_text = item.text
+    item_href = item.get("href")
+    print(f"{item_text}:{item_href}")
+
